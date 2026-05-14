@@ -1,4 +1,5 @@
 const SHEET_NAME = "AI Workflow Reviews";
+const SPREADSHEET_ID = "1wap9UO6h05XXiLKKRmZLph8aHYBU6E1pypRbnceDj5E";
 
 const HEADERS = [
   "submittedAt",
@@ -42,7 +43,7 @@ function doPost(e) {
 }
 
 function getSheet_() {
-  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   let sheet = spreadsheet.getSheetByName(SHEET_NAME);
 
   if (!sheet) {
