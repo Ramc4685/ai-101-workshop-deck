@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Speaker Notes - AI 101 for Small Business Owners</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --charcoal: #0f1713;
+      --panel: #17231d;
+      --paper: #f3eee4;
+      --paper-2: #e7dece;
+      --ink: #17201b;
+      --muted: #647268;
+      --line: #cfc1aa;
+      --brass: #b8872d;
+      --green: #496d5b;
+      --sans: "Aptos", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(rgba(23, 32, 27, .045) 1px, transparent 1px) 0 0 / 32px 32px,
+        linear-gradient(90deg, rgba(23, 32, 27, .045) 1px, transparent 1px) 0 0 / 32px 32px,
+        #e9e1d3;
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.45;
+    }
+
+    main {
+      width: min(1040px, calc(100% - 40px));
+      margin: 36px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 70px rgba(23, 32, 27, .16);
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      padding: 32px 34px 24px;
+      background: var(--charcoal);
+      color: var(--paper);
+      border-bottom: 5px solid var(--brass);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-family: var(--serif);
+      font-size: 44px;
+      line-height: .94;
+      letter-spacing: 0;
+    }
+
+    .subhead {
+      margin: 12px 0 0;
+      color: #b4c1b8;
+      font-weight: 650;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    a,
+    button {
+      min-height: 38px;
+      border: 1px solid rgba(208, 163, 74, .58);
+      background: rgba(208, 163, 74, .12);
+      padding: 0 13px;
+      display: inline-flex;
+      align-items: center;
+      color: inherit;
+      text-decoration: none;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .content {
+      padding: 30px 34px 38px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.12;
+    }
+
+    .eyebrow,
+    th,
+    .num,
+    .kicker {
+      color: var(--brass);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 34px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      padding: 11px 10px;
+      vertical-align: top;
+    }
+
+    td:first-child {
+      width: 145px;
+      font-weight: 850;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .note {
+      display: grid;
+      grid-template-columns: 62px 150px 1fr;
+      gap: 18px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+      break-inside: avoid;
+    }
+
+    .note h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      line-height: 1.16;
+    }
+
+    .note p {
+      margin: 0;
+      color: #334039;
+      font-size: 15px;
+    }
+
+    @media (max-width: 760px) {
+      main { width: calc(100% - 20px); margin: 10px auto; }
+      header { grid-template-columns: 1fr; }
+      .actions { justify-content: flex-start; }
+      .content { padding: 22px; }
+      .note { grid-template-columns: 48px 1fr; }
+      .note .kicker { grid-column: 2; }
+    }
+
+    @media print {
+      body { background: white; }
+      main {
+        width: 100%;
+        margin: 0;
+        border: 0;
+        box-shadow: none;
+      }
+      header {
+        color: var(--ink);
+        background: white;
+        border-bottom: 3px solid var(--ink);
+      }
+      .actions { display: none; }
+      .content { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">Run of show</p>
+        <h1>AI 101 for Small Business Owners</h1>
+        <p class="subhead">Speaker notes, timing plan, and workshop cues for RamC Venkatasamy.</p>
+      </div>
+      <nav class="actions" aria-label="Document actions">
+        <a href="index.html">Open deck</a>
+        <a href="worksheet.html">Open worksheet</a>
+        <button type="button" onclick="window.print()">Print notes</button>
+      </nav>
+    </header>
+
+    <div class="content">
+      <section>
+        <div class="section-title">
+          <h2>Timing Plan</h2>
+          <span class="eyebrow">120 minute workshop</span>
+        </div>
+        <table id="timing"></table>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>Slide Notes</h2>
+          <span class="eyebrow">Architect field guide</span>
+        </div>
+        <div id="notes"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="slides.js"></script>
+  <script>
+    document.getElementById("timing").innerHTML =
+      "<thead><tr><th>Time</th><th>Section</th></tr></thead><tbody>" +
+      window.deckTiming.map(row => `<tr><td>${row[0]}</td><td>${row[1]}</td></tr>`).join("") +
+      "</tbody>";
+
+    document.getElementById("notes").innerHTML = window.deckSlides.map((slide, index) => `
+      <article class="note">
+        <div class="num">${String(index + 1).padStart(2, "0")}</div>
+        <div class="kicker">${slide.kicker}</div>
+        <div>
+          <h3>${slide.title}</h3>
+          <p>${slide.notes || ""}</p>
+        </div>
+      </article>
+    `).join("");
+  </script>
+</body>
+</html>

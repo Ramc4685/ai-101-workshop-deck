@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worksheet - Get Your First AI Workflow Reviewed</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --charcoal: #0f1713;
+      --panel: #17231d;
+      --paper: #f3eee4;
+      --ink: #17201b;
+      --muted: #647268;
+      --line: #cfc1aa;
+      --brass: #b8872d;
+      --green: #496d5b;
+      --red: #b76054;
+      --sans: "Aptos", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(rgba(23, 32, 27, .045) 1px, transparent 1px) 0 0 / 32px 32px,
+        linear-gradient(90deg, rgba(23, 32, 27, .045) 1px, transparent 1px) 0 0 / 32px 32px,
+        #e9e1d3;
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+
+    .page {
+      width: min(8.5in, calc(100% - 32px));
+      min-height: 11in;
+      margin: 24px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 70px rgba(23, 32, 27, .16);
+      padding: .48in;
+    }
+
+    header {
+      border-bottom: 5px solid var(--brass);
+      padding-bottom: .22in;
+      margin-bottom: .24in;
+    }
+
+    .eyebrow,
+    label,
+    legend {
+      color: var(--brass);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: .05in 0 0;
+      max-width: 5.4in;
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: .94;
+      letter-spacing: 0;
+    }
+
+    .subhead {
+      margin: .12in 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+
+    form {
+      display: grid;
+      gap: .17in;
+    }
+
+    .field {
+      break-inside: avoid;
+    }
+
+    label {
+      display: block;
+      margin-bottom: .06in;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1.6px solid var(--line);
+      border-radius: 0;
+      background: rgba(255, 255, 255, .42);
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 650;
+      padding: 10px 11px;
+      outline: none;
+    }
+
+    input {
+      min-height: .38in;
+    }
+
+    textarea {
+      min-height: .78in;
+      resize: vertical;
+      line-height: 1.35;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--brass);
+      box-shadow: 0 0 0 3px rgba(184, 135, 45, .18);
+      background: white;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .2in;
+    }
+
+    .scorecard {
+      margin-top: .06in;
+      border: 1.6px solid var(--line);
+      padding: .16in;
+      background: rgba(255, 255, 255, .34);
+      break-inside: avoid;
+    }
+
+    h2 {
+      margin: 0 0 .12in;
+      font-family: var(--serif);
+      font-size: 22px;
+      line-height: 1.04;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .08in .2in;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .check {
+      display: grid;
+      grid-template-columns: .2in 1fr;
+      gap: .08in;
+      align-items: center;
+      color: var(--ink);
+    }
+
+    .check input {
+      width: .16in;
+      height: .16in;
+      min-height: 0;
+      accent-color: var(--green);
+      margin: 0;
+    }
+
+    .cta-strip {
+      margin-top: .05in;
+      padding: .15in .18in;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .2in;
+      align-items: center;
+      background: var(--charcoal);
+      color: var(--paper);
+      break-inside: avoid;
+    }
+
+    .cta-strip strong {
+      display: block;
+      color: var(--brass);
+      font-size: 15px;
+      margin-bottom: .03in;
+    }
+
+    .cta-strip p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.3;
+      color: #d8d0c4;
+    }
+
+    .submit-button {
+      min-height: 42px;
+      border: 1px solid var(--brass);
+      background: var(--brass);
+      color: var(--charcoal);
+      padding: 0 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .submit-button:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .status {
+      min-height: 20px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .status.success { color: var(--green); }
+    .status.error { color: var(--red); }
+
+    .actions {
+      width: min(8.5in, calc(100% - 32px));
+      margin: 0 auto 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .actions a,
+    .actions button {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      background: white;
+      padding: 0 13px;
+      display: inline-flex;
+      align-items: center;
+      color: var(--ink);
+      text-decoration: none;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: calc(100% - 20px);
+        padding: 22px;
+      }
+      .two-col,
+      .cta-strip {
+        grid-template-columns: 1fr;
+      }
+      .checks {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body { background: white; }
+      .page {
+        width: 8.5in;
+        min-height: 11in;
+        margin: 0;
+        border: 0;
+        box-shadow: none;
+      }
+      input,
+      textarea,
+      select {
+        background: transparent;
+      }
+      .actions,
+      .submit-button,
+      .status {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <header>
+      <p class="eyebrow">Workshop worksheet</p>
+      <h1>Get Your First AI Workflow Reviewed</h1>
+      <p class="subhead">Fill this out during the workshop. Submit one repeated business task and I will review it for a practical AI next step. Do not include passwords, private customer details, or sensitive financial information.</p>
+    </header>
+
+    <form id="worksheetForm">
+      <div class="two-col">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="businessName">Business name</label>
+          <input id="businessName" name="businessName" autocomplete="organization" required>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label for="businessType">Business type</label>
+          <input id="businessType" name="businessType" placeholder="Tutoring, fitness, cleaning, real estate..." required>
+        </div>
+        <div class="field">
+          <label for="customerType">My customer is</label>
+          <input id="customerType" name="customerType" placeholder="Parents, homeowners, patients, local families...">
+        </div>
+      </div>
+      <div class="field">
+        <label for="repeatedTask">Biggest repeated task</label>
+        <textarea id="repeatedTask" name="repeatedTask" required placeholder="What task do you or your team repeat often?"></textarea>
+      </div>
+      <div class="field">
+        <label for="businessLeak">Revenue or operational leak</label>
+        <textarea id="businessLeak" name="businessLeak" required placeholder="Where do delays, missed follow-ups, or manual work cost time or revenue?"></textarea>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label for="timeCost">This task currently takes</label>
+          <input id="timeCost" name="timeCost" placeholder="Example: 3 hours/week">
+        </div>
+        <div class="field">
+          <label for="successMeans">Success means</label>
+          <input id="successMeans" name="successMeans" placeholder="Example: replies sent within 1 hour">
+        </div>
+      </div>
+      <div class="field">
+        <label for="aiOpportunity">AI can help by drafting, organizing, or reviewing</label>
+        <textarea id="aiOpportunity" name="aiOpportunity" placeholder="What could AI help produce or organize?"></textarea>
+      </div>
+      <div class="field">
+        <label for="humanReview">Human approval needed before this is used</label>
+        <input id="humanReview" name="humanReview" placeholder="Who reviews it and what must they check?">
+      </div>
+
+      <section class="scorecard">
+        <h2>Use Case Scorecard</h2>
+        <fieldset>
+          <legend>Check the signals that apply</legend>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="scorecard" value="Happens often">Happens often</label>
+            <label class="check"><input type="checkbox" name="scorecard" value="Takes time">Takes time</label>
+            <label class="check"><input type="checkbox" name="scorecard" value="Uses text">Uses text</label>
+            <label class="check"><input type="checkbox" name="scorecard" value="Has clear steps">Has clear steps</label>
+            <label class="check"><input type="checkbox" name="scorecard" value="Needs consistency">Needs consistency</label>
+            <label class="check"><input type="checkbox" name="scorecard" value="Can be reviewed">Can be reviewed</label>
+            <label class="check"><input type="checkbox" name="scorecard" value="Saves time or money">Saves time or money</label>
+            <label class="check"><input type="checkbox" name="scorecard" value="Low risk first step">Low risk first step</label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="cta-strip">
+        <div>
+          <strong>Submit this for a free workflow review</strong>
+          <p>Share one repeated task and get one practical recommended AI next step.</p>
+          <p id="formStatus" class="status" role="status" aria-live="polite"></p>
+        </div>
+        <button id="submitButton" class="submit-button" type="submit">Submit worksheet</button>
+      </section>
+    </form>
+  </section>
+
+  <nav class="actions">
+    <a href="index.html">Open deck</a>
+    <a href="speaker-notes.html">Speaker notes</a>
+    <button type="button" onclick="window.print()">Print worksheet</button>
+  </nav>
+
+  <script src="slides.js"></script>
+  <script>
+    const config = window.deckConfig || {};
+    const form = document.getElementById("worksheetForm");
+    const submitButton = document.getElementById("submitButton");
+    const statusEl = document.getElementById("formStatus");
+
+    function setStatus(message, type = "") {
+      statusEl.textContent = message;
+      statusEl.className = `status ${type}`.trim();
+    }
+
+    function endpointIsConfigured() {
+      return config.worksheetSubmissionUrl && !config.worksheetSubmissionUrl.includes("REPLACE_WITH_DEPLOYED_SCRIPT_ID");
+    }
+
+    function collectFormData() {
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.scorecard = [...form.querySelectorAll("input[name='scorecard']:checked")].map((item) => item.value);
+      data.source = "ai-101-html-deck";
+      data.submittedAt = new Date().toISOString();
+      return data;
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!endpointIsConfigured()) {
+        setStatus("Submission is not available yet. Please use the printed worksheet.", "error");
+        return;
+      }
+
+      submitButton.disabled = true;
+      setStatus("Submitting worksheet...");
+
+      try {
+        await fetch(config.worksheetSubmissionUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(collectFormData())
+        });
+
+        form.reset();
+        setStatus("Thanks. Your worksheet was submitted for review.", "success");
+      } catch (error) {
+        setStatus("Submission failed. Please try again or use the printed worksheet.", "error");
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
