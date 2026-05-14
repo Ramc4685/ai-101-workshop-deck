@@ -437,7 +437,7 @@
         form.reset();
         setStatus("Thanks. Your worksheet was submitted for review.", "success");
       } catch (error) {
-        setStatus("Submission failed. Please try again or use the printed worksheet.", "error");
+        setStatus("Submission is temporarily unavailable. Please try again later or contact RamC directly.", "error");
       } finally {
         submitButton.disabled = false;
       }
