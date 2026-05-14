@@ -4,7 +4,7 @@ window.deckConfig = {
   consultationLabel: "Get your first AI workflow reviewed",
   formUrl: "worksheet.html",
   formProvider: "Google Sheets",
-  worksheetSubmissionUrl: "https://script.google.com/macros/s/REPLACE_WITH_DEPLOYED_SCRIPT_ID/exec"
+  worksheetSubmissionUrl: "https://script.google.com/macros/s/AKfycbywbgI7c0wNengSQxSLLXcJwd5IvPvQjc-wdelJiKwb2eSK1pbpbwSxYr2bKx9wqjOt/exec"
 };
 
 window.deckSlides = [
